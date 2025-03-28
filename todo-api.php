@@ -9,10 +9,18 @@ function write_log($action, $data) {
     fclose($log);
 }
 
-// Placeholder for the TODO items
-$todo_items = [
-    ["id" => "someUniqueId", "title" => "Erste Aufgabe"]
-];
+// Read content of the file and decode JSON data to an array.
+$todo_file = 'todo.json';
+if (file_exists($todo_file)) {
+    $todo_file = 'todo.json';
+    if (file_exists($todo_file)) {
+    $todo_items = json_decode(
+        file_get_contents($todo_file),
+        true);
+    } else {
+    $todos_items = [];
+    }
+}
 
 // Log the request method and the TODO items
 switch ($_SERVER['REQUEST_METHOD']) {
