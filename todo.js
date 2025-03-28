@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return deleteButton;
     }
  
-    // Create a update button for each todo item
+    // Create a delete button for each todo item
     const fetchTodos = () => {
         fetch(apiUrl)
         .then(response => response.json())
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = item.title;
+                li.appendChild(getDeleteButton(item));
                 todoList.appendChild(li);
             });
         });
