@@ -2,7 +2,31 @@ document.addEventListener('DOMContentLoaded', function() {
  
     // Define the URL to our CRUD server api
     const apiUrl = 'todo-api.php';
-    
+
+    // Create a delete button for each todo item
+    const getDeleteButton = (item) => {
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Löschen';
+ 
+        // Handle delete button click
+        deleteButton.addEventListener('click', function() {
+            fetch(apiUrl, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: item.id })
+            })
+            .then(response => response.json())
+            .then(() => {
+                fetchTodos(); // Reload todo list
+            });
+        });
+ 
+        return deleteButton;
+    }
+ 
+    // Create a update button for each todo item
     const fetchTodos = () => {
         fetch(apiUrl)
         .then(response => response.json())
@@ -16,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
+    // Handle form submit
     document.getElementById('todo-form').addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -41,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
+    // Load todos
     fetchTodos();
 
 });
