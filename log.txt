@@ -12,3 +12,5 @@
 2025-03-28 09:07:10 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"}]
 2025-03-28 09:08:01 - GET: [{"id":"someUniqueID","title":"Erste wichtige Aufgabe"}]
 2025-03-28 09:08:13 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"}]
+2025-03-28 09:23:36 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"}]
+2025-03-28 09:23:59 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"},{"id":"67e66aa290463","title":"Zweite Aufgabe"},{"id":"67e66aaa308bd","title":"Dritte Aufgabe"}]
