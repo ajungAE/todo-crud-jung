@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('todo-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        const todoInput = document.getElementById('todo-input').value;
+
+        const inputElement = document.getElementById('todo-input');
+        const todoInput = inputElement.value;
+        inputElement.value = "";
+        
  
         fetch(apiUrl, {
             method: 'POST',
@@ -39,5 +43,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     fetchTodos();
-    
+
 });
