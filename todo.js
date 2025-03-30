@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const todoList = document.getElementById('todo-list');
+            todoList.innerHTML = ""; // ← empty list! (NEW)
             data.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = item.title;
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const todoList = document.getElementById('todo-list');
             const li = document.createElement('li');
             li.textContent = data.title;
+            li.appendChild(getDeleteButton(data)); // ← ADDING DELETE BUTTON (NEW)
             todoList.appendChild(li);
         });
     });
