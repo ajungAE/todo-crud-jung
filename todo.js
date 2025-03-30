@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             const todoList = document.getElementById('todo-list');
+            todoList.innerHTML = ""; // ← empty list! (NEW)
             data.forEach(item => {
                 const li = document.createElement('li');
                 li.textContent = item.title;
