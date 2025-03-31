@@ -40,8 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify({ id: item.id, completed: true })
             })
                 .then(response => response.json())
-                .then(updatedItem => {
-                    li.style.textDecoration = 'line-through';
+                .then(updatedItem => { // (NEW)
+                    const parentLi = completeButton.parentElement;// (NEW)
+                    parentLi.style.textDecoration = 'line-through';// (NEW)
+                    parentLi.style.opacity = '0.6';// (NEW)
                 });
         });
 
