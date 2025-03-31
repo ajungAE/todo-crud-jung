@@ -43,7 +43,25 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($new_todo);
         break;
     case 'PUT':
-        // Placeholder for updating a TODO
+        // Get the data sent from the client
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        // Update the matching todo item
+        foreach ($todo_items as &$todo) {
+            if ($todo['id'] === $data['id']) {
+                // Update the "completed" status
+                $todo['completed'] = $data['completed'];
+                break;
+            }
+        }
+        // Save updated list
+        file_put_contents($todo_file, json_encode($todo_items));
+
+        // Return the updated item
+        echo json_encode($data);
+
+        // Log the update
+        write_log("PUT", $data);
         break;
     case 'DELETE': // (NEW)
         $data = json_decode(file_get_contents('php://input'), true); // Receive the JSON data from the request body (includes the ID of the todo to delete)

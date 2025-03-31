@@ -26,3 +26,9 @@
 2025-03-31 00:42:47 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]
 2025-03-31 00:42:47 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]
 2025-03-31 00:42:49 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]
+2025-03-31 00:46:43 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]
+2025-03-31 00:48:35 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]
+2025-03-31 00:48:42 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]
+2025-03-31 00:49:55 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]
+2025-03-31 00:53:03 - PUT: {"id":"67e66aaa308bd","completed":true}
+2025-03-31 00:53:04 - PUT: {"id":"67e9e336b9caa","completed":true}
