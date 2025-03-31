@@ -15,3 +15,10 @@
 2025-03-28 09:23:36 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"}]
 2025-03-28 09:23:59 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"},{"id":"67e66aa290463","title":"Zweite Aufgabe"},{"id":"67e66aaa308bd","title":"Dritte Aufgabe"}]
 2025-03-28 09:43:47 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"},{"id":"67e66aa290463","title":"Zweite Aufgabe"},{"id":"67e66aaa308bd","title":"Dritte Aufgabe"}]
+2025-03-30 21:49:31 - GET: [{"id":"someUniqueID","title":"Erste Aufgabe"},{"id":"67e66aa290463","title":"Zweite Aufgabe"},{"id":"67e66aaa308bd","title":"Dritte Aufgabe"}]
+2025-03-30 21:49:36 - DELETE: {"id":"someUniqueID"}
+2025-03-30 21:49:36 - GET: [{"id":"67e66aa290463","title":"Zweite Aufgabe"},{"id":"67e66aaa308bd","title":"Dritte Aufgabe"}]
+2025-03-30 21:49:55 - DELETE: {"id":"67e66aa290463"}
+2025-03-30 21:49:55 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9bc800adc6","title":"Vierte Aufgabe"}]
+2025-03-31 00:35:02 - DELETE: {"id":"67e9bc800adc6"}
+2025-03-31 00:35:02 - GET: [{"id":"67e66aaa308bd","title":"Dritte Aufgabe"},{"id":"67e9e336b9caa","title":"F\u00fcnfte Aufgabe","completed":false}]

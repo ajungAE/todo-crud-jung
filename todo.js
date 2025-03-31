@@ -25,6 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
  
         return deleteButton;
     }
+
+    // create a complete button for each todo item
+    const getCompleteButton = (item) => {
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Erledigt';
+     
+        completeButton.addEventListener('click', function() {
+            fetch(apiUrl, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: item.id, completed: true })
+            })
+            .then(response => response.json())
+            .then(updatedItem => {
+                li.style.textDecoration = 'line-through';
+            });
+        });
+     
+        return completeButton;
+    }
  
     // Create a delete button for each todo item
     const fetchTodos = () => {
