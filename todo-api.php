@@ -30,19 +30,19 @@ function write_log($action, $data)
     fclose($log);
 }
 
-// Read content of the file and decode JSON data to an array.
-$todo_file = 'todo.json';
-if (file_exists($todo_file)) {
-    $todo_file = 'todo.json';
-    if (file_exists($todo_file)) {
-        $todo_items = json_decode(
-            file_get_contents($todo_file),
-            true
-        );
-    } else {
-        $todos_items = [];
-    }
-}
+// (NEW) This will be deleted, when the database is working
+// $todo_file = 'todo.json';
+// if (file_exists($todo_file)) {
+//     $todo_file = 'todo.json';
+//     if (file_exists($todo_file)) {
+//         $todo_items = json_decode(
+//             file_get_contents($todo_file),
+//             true
+//         );
+//     } else {
+//         $todos_items = [];
+//     }
+// }
 
 // Log the request method and the TODO items
 switch ($_SERVER['REQUEST_METHOD']) {
@@ -73,7 +73,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($newTodo);
         write_log("POST", $newTodo);
         break;
-    case 'PUT': // (NEW) Updatet to work with mySQL, instead of JSON <--------------------------------
+    case 'PUT': 
         $data = json_decode(file_get_contents('php://input'), true);
         $id = $data['id'];
         $completed = $data['completed'];
