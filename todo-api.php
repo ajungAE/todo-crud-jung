@@ -52,27 +52,27 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($todo_items);
         write_log("GET", $todo_items);
         break;
-        case 'POST':
-            $data = json_decode(file_get_contents('php://input'), true);
-        
-            // Insert into database
-            $statement = $pdo->prepare(
-                "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
-            );
-            $statement->execute(['title' => $data['title'], 'completed' => 0]);
-        
-            // Hole die letzte ID
-            $id = $pdo->lastInsertId();
-        
-            // Lade das neue Todo aus der DB
-            $stmt = $pdo->prepare("SELECT * FROM todo WHERE id = ?");
-            $stmt->execute([$id]);
-            $newTodo = $stmt->fetch();
-        
-            // Rückgabe: vollständiges neues Todo
-            echo json_encode($newTodo);
-            write_log("POST", $newTodo);
-            break;
+    case 'POST':
+        $data = json_decode(file_get_contents('php://input'), true);
+
+        // Insert into database
+        $statement = $pdo->prepare(
+            "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+        );
+        $statement->execute(['title' => $data['title'], 'completed' => 0]);
+
+        // Hole die letzte ID
+        $id = $pdo->lastInsertId();
+
+        // Lade das neue Todo aus der DB
+        $stmt = $pdo->prepare("SELECT * FROM todo WHERE id = ?");
+        $stmt->execute([$id]);
+        $newTodo = $stmt->fetch();
+
+        // Rückgabe: vollständiges neues Todo
+        echo json_encode($newTodo);
+        write_log("POST", $newTodo);
+        break;
     case 'PUT':
         // Get the data sent from the client
         $data = json_decode(file_get_contents('php://input'), true);
@@ -94,13 +94,19 @@ switch ($_SERVER['REQUEST_METHOD']) {
         // Log the update
         write_log("PUT", $data);
         break;
-    case 'DELETE': // (NEW)
-        $data = json_decode(file_get_contents('php://input'), true); // Receive the JSON data from the request body (includes the ID of the todo to delete)
-        $todo_items = array_values(array_filter($todo_items, function ($todo) use ($data) { // Remove the todo item with the matching ID from the list
-            return $todo['id'] !== $data['id'];
-        }));
-        file_put_contents($todo_file, json_encode($todo_items)); // Save the updated todo list back to the JSON file
-        echo json_encode(['status' => 'success']); // Send a success response back to the client
-        write_log("DELETE", $data); // Log the delete action for debugging or tracking
+    case 'DELETE': // (NEW) Adjusting to MySQL <---------------------------------------------
+        $data = json_decode(file_get_contents('php://input'), true); 
+        $id = $data['id'];
+
+        if ($id) {
+            $stmt = $pdo->prepare("DELETE FROM todo WHERE id = ?");
+            $stmt->execute([$id]);
+            echo json_encode(["status" => "success"]);
+            write_log("DELETE", $data);
+        } else {
+            http_response_code(400);
+            echo json_encode(["error" => "ID fehlt"]);
+        }
+
         break;
 }
