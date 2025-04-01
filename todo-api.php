@@ -1,5 +1,25 @@
 <?php
-header('Content-Type: application/json');
+header('Content-Type: application/json');  //application/json für JSON files
+
+$host = 'localhost';
+$db = 'test_db';
+$user = 'alexjung';
+$pass = 'links234';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+];
+
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+    //var_dump($pdo);
+} catch (\PDOException $e) {
+    error_log("PDOException: " . $e->getMessage() . " in "
+        . $e->getFile() . " on line " . $e->getLine());
+}
 
 // LOG function in PHP
 function write_log($action, $data)
@@ -27,21 +47,32 @@ if (file_exists($todo_file)) {
 // Log the request method and the TODO items
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
+        $statement = $pdo->query("SELECT * FROM todo"); // (NEW) 
+        $todo_items = $statement->fetchAll(); // (NEW) 
         echo json_encode($todo_items);
         write_log("GET", $todo_items);
         break;
-    case 'POST':
-        // Get data from the input stream.
-        $data = json_decode(file_get_contents('php://input'), true);
-        // Create new todo item.
-        $new_todo = ["id" => uniqid(), "title" => $data['title'], "completed" => false]; // (NEW)
-        // Add new item to our todo item list.
-        $todo_items[] = $new_todo;
-        // Write todo items to JSON file.
-        file_put_contents($todo_file, json_encode($todo_items));
-        // Return the new item.
-        echo json_encode($new_todo);
-        break;
+        case 'POST':
+            $data = json_decode(file_get_contents('php://input'), true);
+        
+            // Insert into database
+            $statement = $pdo->prepare(
+                "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+            );
+            $statement->execute(['title' => $data['title'], 'completed' => 0]);
+        
+            // Hole die letzte ID
+            $id = $pdo->lastInsertId();
+        
+            // Lade das neue Todo aus der DB
+            $stmt = $pdo->prepare("SELECT * FROM todo WHERE id = ?");
+            $stmt->execute([$id]);
+            $newTodo = $stmt->fetch();
+        
+            // Rückgabe: vollständiges neues Todo
+            echo json_encode($newTodo);
+            write_log("POST", $newTodo);
+            break;
     case 'PUT':
         // Get the data sent from the client
         $data = json_decode(file_get_contents('php://input'), true);

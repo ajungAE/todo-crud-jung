@@ -90,12 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then(response => response.json())
             .then(data => {
-                const todoList = document.getElementById('todo-list');
-                const li = document.createElement('li');
-                li.textContent = data.title;
-                li.appendChild(getDeleteButton(data));
-                li.appendChild(getCompleteButton(data)); // ← ADDING Complete BUTTON (NEW)
-                todoList.appendChild(li);
+                fetchTodos();
             });
     });
 
