@@ -73,29 +73,24 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo json_encode($newTodo);
         write_log("POST", $newTodo);
         break;
-    case 'PUT':
-        // Get the data sent from the client
+    case 'PUT': // (NEW) Updatet to work with mySQL, instead of JSON <--------------------------------
         $data = json_decode(file_get_contents('php://input'), true);
+        $id = $data['id'];
+        $completed = $data['completed'];
 
-        // Update the matching todo item
-        foreach ($todo_items as &$todo) {
-            if ($todo['id'] === $data['id']) {
-                // Update the "completed" status
-                $todo['completed'] = $data['completed'];
-                break;
-            }
+        if (isset($id) && isset($completed)) {
+            $stmt = $pdo->prepare("UPDATE todo SET completed = ? WHERE id = ?");
+            $stmt->execute([$completed, $id]);
+            echo json_encode(["status" => "success"]);
+            write_log("PUT", $data);
+        } else {
+            http_response_code(400);
+            echo json_encode(["error" => "ID oder Status fehlt"]);
         }
-        // Save updated list
-        file_put_contents($todo_file, json_encode($todo_items));
 
-        // Return the updated item
-        echo json_encode($data);
-
-        // Log the update
-        write_log("PUT", $data);
         break;
-    case 'DELETE': // (NEW) Adjusting to MySQL <---------------------------------------------
-        $data = json_decode(file_get_contents('php://input'), true); 
+    case 'DELETE':
+        $data = json_decode(file_get_contents('php://input'), true);
         $id = $data['id'];
 
         if ($id) {
