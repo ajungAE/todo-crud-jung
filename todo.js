@@ -153,9 +153,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const id = document.getElementById('todo-id').value;
         const todoInput = document.getElementById('todo-update-input').value;
-        console.log(id);
-        console.log(todoInput);
+
+        fetch(apiUrl, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: id,
+                title: todoInput,
+                completed: false 
+            })
+        })
+            .then(response => response.json())
+            .then(() => {
+                document.getElementById('todo-update-form').style.display = 'none';
+                fetchTodos(); // Liste neu laden
+            });
     });
+
 
     // Load todos
     fetchTodos();
