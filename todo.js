@@ -79,6 +79,21 @@ document.addEventListener('DOMContentLoaded', function () {
         return completeButton;
     };
 
+    // (NEW) create update button <------------
+    const getUpdateButton = (item) => {
+
+        const updateButton = document.createElement('button');
+        updateButton.textContent = 'Aktualisieren';
+
+        // Handle update button click
+        updateButton.addEventListener('click', function () {
+            document.getElementById('todo-id').value = item.id;
+            document.getElementById('todo-update-input').value = item.title;
+            document.getElementById('todo-update-form').style.display = 'block';
+        });
+
+        return updateButton;
+    }
 
     // Create a delete button for each todo item
     const fetchTodos = () => {
@@ -103,13 +118,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     li.appendChild(getDeleteButton(item));
                     li.appendChild(getCompleteButton(item));
+                    li.appendChild(getUpdateButton(item)); // (NEW) <-------- UPDATE BUTTON
                     todoList.appendChild(li);
                 }); // ← das war die fehlende Klammer hier
             });
     };
 
 
-    // Handle form submit
+    // Handle form submit todo form
     document.getElementById('todo-form').addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -129,6 +145,16 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 fetchTodos();
             });
+    });
+
+    // Handle form submit todo update form
+    document.getElementById('todo-update-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const id = document.getElementById('todo-id').value;
+        const todoInput = document.getElementById('todo-update-input').value;
+        console.log(id);
+        console.log(todoInput);
     });
 
     // Load todos
