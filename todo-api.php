@@ -62,19 +62,20 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'PUT':
         $data = json_decode(file_get_contents('php://input'), true);
         $id = $data['id'];
-        $completed = $data['completed'] ? 1 : 0;
+        $title = $data['title'];
+        $completed = isset($data['completed']) && $data['completed'] ? 1 : 0;
 
-        if (isset($id)) {
-            $stmt = $pdo->prepare("UPDATE todo SET completed = ? WHERE id = ?");
-            $stmt->execute([$completed, $id]);
+        if (isset($id) && isset($title)) {
+            $stmt = $pdo->prepare("UPDATE todo SET title = ?, completed = ? WHERE id = ?");
+            $stmt->execute([$title, $completed, $id]);
             echo json_encode(["status" => "success"]);
             write_log("PUT", $data);
         } else {
             http_response_code(400);
-            echo json_encode(["error" => "ID fehlt"]);
+            echo json_encode(["error" => "ID oder Titel fehlt"]);
         }
-
         break;
+
     case 'DELETE':
         $data = json_decode(file_get_contents('php://input'), true);
         $id = $data['id'];
