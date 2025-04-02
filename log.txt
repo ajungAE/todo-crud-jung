@@ -58,3 +58,40 @@
 2025-04-01 08:56:57 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0},{"id":8,"title":"erledigen","completed":0}]
 2025-04-01 08:57:36 - POST: {"id":9,"title":"aufgabeXY","completed":0}
 2025-04-01 09:01:57 - POST: {"id":10,"title":"test","completed":0}
+2025-04-01 22:14:33 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0},{"id":8,"title":"erledigen","completed":0},{"id":9,"title":"aufgabeXY","completed":0},{"id":10,"title":"test","completed":0}]
+2025-04-01 22:16:09 - DELETE: {"id":10}
+2025-04-01 22:16:09 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0},{"id":8,"title":"erledigen","completed":0},{"id":9,"title":"aufgabeXY","completed":0}]
+2025-04-01 22:16:11 - PUT: {"id":9,"completed":true}
+2025-04-01 22:16:15 - DELETE: {"id":9}
+2025-04-01 22:16:15 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0},{"id":8,"title":"erledigen","completed":0}]
+2025-04-01 22:16:16 - PUT: {"id":8,"completed":true}
+2025-04-01 22:16:17 - PUT: {"id":8,"completed":true}
+2025-04-01 22:16:18 - PUT: {"id":8,"completed":true}
+2025-04-01 22:16:20 - DELETE: {"id":8}
+2025-04-01 22:16:20 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0}]
+2025-04-01 22:16:36 - POST: {"id":11,"title":"ein nagelnaue Aufgabe","completed":0}
+2025-04-01 22:16:36 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0},{"id":11,"title":"ein nagelnaue Aufgabe","completed":0}]
+2025-04-01 23:37:01 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0},{"id":11,"title":"ein nagelnaue Aufgabe","completed":0}]
+2025-04-01 23:37:44 - PUT: {"id":11,"completed":true}
+2025-04-01 23:37:46 - PUT: {"id":11,"completed":true}
+2025-04-01 23:40:12 - PUT: {"id":11,"completed":true}
+2025-04-01 23:45:31 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0},{"id":11,"title":"ein nagelnaue Aufgabe","completed":1}]
+2025-04-01 23:45:34 - PUT: {"id":7,"completed":true}
+2025-04-01 23:50:45 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":1},{"id":11,"title":"ein nagelnaue Aufgabe","completed":1}]
+2025-04-01 23:51:07 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":1},{"id":11,"title":"ein nagelnaue Aufgabe","completed":1}]
+2025-04-02 00:08:28 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":1},{"id":11,"title":"ein nagelnaue Aufgabe","completed":1}]
+2025-04-02 00:08:30 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":1},{"id":11,"title":"ein nagelnaue Aufgabe","completed":1}]
+2025-04-02 00:08:34 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":1},{"id":11,"title":"ein nagelnaue Aufgabe","completed":1}]
+2025-04-02 00:12:03 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":1},{"id":11,"title":"ein nagelnaue Aufgabe","completed":1}]
+2025-04-02 00:14:51 - PUT: {"id":7,"completed":false}
+2025-04-02 00:14:53 - PUT: {"id":7,"completed":true}
+2025-04-02 00:14:53 - PUT: {"id":7,"completed":false}
+2025-04-02 00:14:54 - PUT: {"id":11,"completed":false}
+2025-04-02 00:14:55 - PUT: {"id":11,"completed":true}
+2025-04-02 00:14:55 - PUT: {"id":11,"completed":false}
+2025-04-02 00:14:56 - PUT: {"id":11,"completed":true}
+2025-04-02 00:14:57 - PUT: {"id":11,"completed":false}
+2025-04-02 00:14:58 - DELETE: {"id":11}
+2025-04-02 00:14:58 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0}]
+2025-04-02 00:15:09 - PUT: {"id":7,"completed":true}
+2025-04-02 00:15:09 - PUT: {"id":6,"completed":true}
