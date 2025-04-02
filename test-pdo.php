@@ -1,4 +1,17 @@
 <?php
+/**
+ * Datenbankverbindung und Abfrage mit PDO
+ *
+ * Dieses Skript stellt eine Verbindung zur MySQL-Datenbank "test_db"
+ * mithilfe von PDO (PHP Data Objects) her.
+ *
+ * Funktionen dieses Skripts:
+ * - Aufbau einer sicheren PDO-Verbindung mit Fehlerbehandlung
+ * - Abfrage aller Einträge aus der Tabelle "todo"
+ * - Ausgabe der einzelnen Felder (uid, title, completed)
+ * - Ausgabe des kompletten Datensatzes per var_dump (Debug-Zwecke)
+ */
+
  
 $host = 'localhost';
 $db = 'test_db';
