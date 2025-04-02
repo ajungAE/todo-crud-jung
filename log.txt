@@ -95,3 +95,4 @@
 2025-04-02 00:14:58 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":0},{"id":7,"title":"noch etwas","completed":0}]
 2025-04-02 00:15:09 - PUT: {"id":7,"completed":true}
 2025-04-02 00:15:09 - PUT: {"id":6,"completed":true}
+2025-04-02 01:10:47 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":4,"title":"und noch was","completed":0},{"id":5,"title":"nochmal was","completed":0},{"id":6,"title":"aufgabe ","completed":1},{"id":7,"title":"noch etwas","completed":1}]
