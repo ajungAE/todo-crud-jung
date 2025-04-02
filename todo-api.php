@@ -1,5 +1,12 @@
 
 <?php
+// BACKEND / API 
+//  Empfängt die Requests vom Frontend
+//  Verbindet sich mit der Datenbank über PDO
+//  Führt passende SQL-Befehle aus (je nach HTTP-Methode)
+//  Gibt als Antwort JSON-Daten zurück, die dein Frontend anzeigen kann
+
+
 header('Content-Type: application/json');  //application/json für JSON files
 
 $host = 'localhost';

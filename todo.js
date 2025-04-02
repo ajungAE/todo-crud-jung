@@ -1,3 +1,21 @@
+/**
+ * todo.js – Frontend-Logik für das ToDo-Listen-Projekt
+ *
+ * Dieses Skript kümmert sich um:
+ * - Die Anzeige aller Aufgaben (via API-Fetch)
+ * - Das Anlegen neuer Aufgaben über ein Formular
+ * - Das Löschen einzelner Aufgaben
+ * - Das Markieren von Aufgaben als erledigt oder wieder offen (Toggle)
+ *
+ * Die Kommunikation erfolgt per Fetch-API mit der PHP-Datei "todo-api.php",
+ * welche die Verbindung zur MySQL-Datenbank herstellt.
+ *
+ * Alle Aufgaben werden dynamisch im DOM erstellt und aktualisiert,
+ * ohne dass die Seite neu geladen werden muss.
+ */
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // Define the URL to our CRUD server api
