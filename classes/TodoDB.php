@@ -12,7 +12,6 @@ require_once('./config.php');
 class TodoDB
 {
     private $connection;
-    private $stmt;
 
     /**
      * Contructructor of the TodoDB class.
