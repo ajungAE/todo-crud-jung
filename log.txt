@@ -132,3 +132,353 @@
 2025-04-03 08:11:26 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch was","completed":0},{"id":6,"title":"aufgabe AKTUALISIERT","completed":0}]
 2025-04-03 08:11:36 - PUT: {"id":"3","title":"noch ETwas","completed":false}
 2025-04-03 08:11:36 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch ETwas","completed":0},{"id":6,"title":"aufgabe AKTUALISIERT","completed":0}]
+2025-04-03 08:21:27 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch ETwas","completed":0},{"id":6,"title":"aufgabe AKTUALISIERT","completed":0}]
+2025-04-03 08:24:48 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":3,"title":"noch ETwas","completed":0},{"id":6,"title":"aufgabe AKTUALISIERT","completed":0}]
+2025-04-03 08:24:52 - DELETE: {"id":3}
+2025-04-03 08:24:52 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALISIERT","completed":0}]
+2025-04-03 08:25:05 - PUT: {"id":"6","title":"aufgabe AKTUALIS","completed":false}
+2025-04-03 08:25:05 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0}]
+2025-04-03 09:16:41 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0}]
+2025-04-03 09:16:55 - POST: {"id":13,"title":"wichtig wichtig","completed":0}
+2025-04-03 09:16:55 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":13,"title":"wichtig wichtig","completed":0}]
+2025-04-03 09:17:08 - PUT: {"id":"13","title":"wichtig wichtiger","completed":false}
+2025-04-03 09:17:08 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":13,"title":"wichtig wichtiger","completed":0}]
+2025-04-03 09:17:16 - DELETE: {"id":13}
+2025-04-03 09:17:16 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0}]
+2025-04-03 09:17:29 - POST: {"id":14,"title":"","completed":0}
+2025-04-03 09:17:29 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":14,"title":"","completed":0}]
+2025-04-03 09:17:30 - POST: {"id":15,"title":"","completed":0}
+2025-04-03 09:17:30 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":14,"title":"","completed":0},{"id":15,"title":"","completed":0}]
+2025-04-03 09:17:32 - DELETE: {"id":14}
+2025-04-03 09:17:32 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":15,"title":"","completed":0}]
+2025-04-03 09:17:33 - DELETE: {"id":15}
+2025-04-03 09:17:33 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0}]
+2025-04-03 09:17:35 - POST: {"id":16,"title":"c","completed":0}
+2025-04-03 09:17:35 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0}]
+2025-04-03 09:19:22 - POST: {"id":17,"title":"","completed":0}
+2025-04-03 09:19:22 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":17,"title":"","completed":0}]
+2025-04-03 09:28:48 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":17,"title":"","completed":0}]
+2025-04-03 09:28:53 - DELETE: {"id":17}
+2025-04-03 09:28:53 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0}]
+2025-04-03 09:29:16 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0}]
+2025-04-03 15:01:46 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:01:46 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:01:46 - POST: {"id":18,"title":"URGENT TASK","completed":0}
+2025-04-03 15:01:46 - SQL: "SELECT * FROM todo"
+2025-04-03 15:01:46 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":18,"title":"URGENT TASK","completed":0}]
+2025-04-03 15:01:58 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:01:58 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:01:58 - POST: {"id":19,"title":"ANOTHER URGENT TASK","completed":0}
+2025-04-03 15:01:58 - SQL: "SELECT * FROM todo"
+2025-04-03 15:01:58 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":18,"title":"URGENT TASK","completed":0},{"id":19,"title":"ANOTHER URGENT TASK","completed":0}]
+2025-04-03 15:02:03 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:02:03 - DELETE: {"id":18}
+2025-04-03 15:02:03 - SQL: "SELECT * FROM todo"
+2025-04-03 15:02:03 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":19,"title":"ANOTHER URGENT TASK","completed":0}]
+2025-04-03 15:02:15 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:02:15 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:02:15 - POST: {"id":20,"title":"SUPER URGENT","completed":0}
+2025-04-03 15:02:15 - SQL: "SELECT * FROM todo"
+2025-04-03 15:02:15 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":19,"title":"ANOTHER URGENT TASK","completed":0},{"id":20,"title":"SUPER URGENT","completed":0}]
+2025-04-03 15:02:21 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:02:21 - DELETE: {"id":19}
+2025-04-03 15:02:21 - SQL: "SELECT * FROM todo"
+2025-04-03 15:02:21 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":20,"title":"SUPER URGENT","completed":0}]
+2025-04-03 15:02:47 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:02:47 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:02:47 - POST: {"id":21,"title":"MEGA TASK","completed":0}
+2025-04-03 15:02:47 - SQL: "SELECT * FROM todo"
+2025-04-03 15:02:47 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":20,"title":"SUPER URGENT","completed":0},{"id":21,"title":"MEGA TASK","completed":0}]
+2025-04-03 15:03:16 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:03:16 - DELETE: {"id":20}
+2025-04-03 15:03:16 - SQL: "SELECT * FROM todo"
+2025-04-03 15:03:16 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":21,"title":"MEGA TASK","completed":0}]
+2025-04-03 15:17:11 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:11 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":16,"title":"c","completed":0},{"id":21,"title":"MEGA TASK","completed":0}]
+2025-04-03 15:17:17 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:17:17 - DELETE: {"id":16}
+2025-04-03 15:17:17 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:17 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":2,"title":"andere Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0}]
+2025-04-03 15:17:27 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:17:27 - DELETE: {"id":2}
+2025-04-03 15:17:27 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:27 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0}]
+2025-04-03 15:17:31 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:17:31 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:17:31 - POST: {"id":22,"title":"1","completed":0}
+2025-04-03 15:17:31 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:31 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0}]
+2025-04-03 15:17:32 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:17:32 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:17:32 - POST: {"id":23,"title":"2","completed":0}
+2025-04-03 15:17:32 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:32 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":23,"title":"2","completed":0}]
+2025-04-03 15:17:32 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:17:32 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:17:32 - POST: {"id":24,"title":"3","completed":0}
+2025-04-03 15:17:32 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:32 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":23,"title":"2","completed":0},{"id":24,"title":"3","completed":0}]
+2025-04-03 15:17:33 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:17:33 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:17:33 - POST: {"id":25,"title":"4","completed":0}
+2025-04-03 15:17:33 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:33 - GET: [{"id":1,"title":"neue Aufgabe","completed":0},{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":23,"title":"2","completed":0},{"id":24,"title":"3","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:17:47 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:17:47 - DELETE: {"id":1}
+2025-04-03 15:17:47 - SQL: "SELECT * FROM todo"
+2025-04-03 15:17:47 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":23,"title":"2","completed":0},{"id":24,"title":"3","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:21:57 - SQL: "SELECT * FROM todo"
+2025-04-03 15:21:57 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":23,"title":"2","completed":0},{"id":24,"title":"3","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:21:59 - DEBUG PUT payload: {"id":25,"completed":true}
+2025-04-03 15:22:01 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:22:01 - DELETE: {"id":24}
+2025-04-03 15:22:01 - SQL: "SELECT * FROM todo"
+2025-04-03 15:22:01 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":23,"title":"2","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:22:03 - DEBUG PUT payload: {"id":23,"completed":true}
+2025-04-03 15:22:05 - DEBUG PUT payload: {"id":23,"completed":false}
+2025-04-03 15:22:06 - DEBUG PUT payload: {"id":25,"completed":true}
+2025-04-03 15:22:06 - DEBUG PUT payload: {"id":25,"completed":false}
+2025-04-03 15:22:12 - DEBUG PUT payload: {"id":25,"completed":true}
+2025-04-03 15:22:30 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:22:30 - DELETE: {"id":23}
+2025-04-03 15:22:30 - SQL: "SELECT * FROM todo"
+2025-04-03 15:22:30 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:29:19 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:19 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:29:22 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:29:22 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:29:22 - POST: {"id":26,"title":"5","completed":0}
+2025-04-03 15:29:22 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:22 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0},{"id":26,"title":"5","completed":0}]
+2025-04-03 15:29:23 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:29:23 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:29:23 - POST: {"id":27,"title":"6","completed":0}
+2025-04-03 15:29:23 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:23 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0},{"id":26,"title":"5","completed":0},{"id":27,"title":"6","completed":0}]
+2025-04-03 15:29:24 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:29:24 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:29:24 - POST: {"id":28,"title":"7","completed":0}
+2025-04-03 15:29:24 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:24 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0},{"id":26,"title":"5","completed":0},{"id":27,"title":"6","completed":0},{"id":28,"title":"7","completed":0}]
+2025-04-03 15:29:26 - DEBUG PUT payload: {"id":28,"completed":true}
+2025-04-03 15:29:26 - DEBUG PUT payload: {"id":28,"completed":false}
+2025-04-03 15:29:28 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:29:28 - DELETE: {"id":28}
+2025-04-03 15:29:28 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:28 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0},{"id":26,"title":"5","completed":0},{"id":27,"title":"6","completed":0}]
+2025-04-03 15:29:33 - DEBUG PUT payload: {"id":"27","title":"7","completed":0}
+2025-04-03 15:29:33 - SQL: "UPDATE todo SET title = :title, completed = :completed WHERE id = :id"
+2025-04-03 15:29:33 - PUT: {"id":"27","title":"7","completed":0}
+2025-04-03 15:29:33 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:33 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0},{"id":26,"title":"5","completed":0},{"id":27,"title":"7","completed":0}]
+2025-04-03 15:29:34 - DEBUG PUT payload: {"id":27,"completed":true}
+2025-04-03 15:29:35 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:29:35 - DELETE: {"id":26}
+2025-04-03 15:29:35 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:35 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0},{"id":27,"title":"7","completed":0}]
+2025-04-03 15:29:38 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:29:38 - DELETE: {"id":27}
+2025-04-03 15:29:38 - SQL: "SELECT * FROM todo"
+2025-04-03 15:29:38 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:29:40 - DEBUG PUT payload: {"id":25,"completed":true}
+2025-04-03 15:29:43 - DEBUG PUT payload: {"id":25,"completed":false}
+2025-04-03 15:29:44 - DEBUG PUT payload: {"id":25,"completed":true}
+2025-04-03 15:29:45 - DEBUG PUT payload: {"id":22,"completed":true}
+2025-04-03 15:29:46 - DEBUG PUT payload: {"id":22,"completed":false}
+2025-04-03 15:29:46 - DEBUG PUT payload: {"id":25,"completed":false}
+2025-04-03 15:29:47 - DEBUG PUT payload: {"id":25,"completed":true}
+2025-04-03 15:29:47 - DEBUG PUT payload: {"id":25,"completed":false}
+2025-04-03 15:29:48 - DEBUG PUT payload: {"id":22,"completed":true}
+2025-04-03 15:29:49 - DEBUG PUT payload: {"id":21,"completed":true}
+2025-04-03 15:29:50 - DEBUG PUT payload: {"id":6,"completed":true}
+2025-04-03 15:31:41 - SQL: "SELECT * FROM todo"
+2025-04-03 15:31:41 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:31:43 - SQL: "SELECT * FROM todo"
+2025-04-03 15:31:43 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":22,"title":"1","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:31:49 - DEBUG PUT payload: {"id":6,"completed":true}
+2025-04-03 15:31:49 - DEBUG PUT payload: {"id":6,"completed":false}
+2025-04-03 15:31:50 - DEBUG PUT payload: {"id":21,"completed":true}
+2025-04-03 15:31:51 - DEBUG PUT payload: {"id":21,"completed":false}
+2025-04-03 15:31:52 - DEBUG PUT payload: {"id":22,"completed":true}
+2025-04-03 15:31:52 - DEBUG PUT payload: {"id":22,"completed":false}
+2025-04-03 15:31:53 - DEBUG PUT payload: {"id":25,"completed":true}
+2025-04-03 15:31:54 - DEBUG PUT payload: {"id":25,"completed":false}
+2025-04-03 15:31:54 - DEBUG PUT payload: {"id":22,"completed":true}
+2025-04-03 15:31:55 - DEBUG PUT payload: {"id":22,"completed":false}
+2025-04-03 15:31:57 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:31:57 - DELETE: {"id":22}
+2025-04-03 15:31:57 - SQL: "SELECT * FROM todo"
+2025-04-03 15:31:57 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0},{"id":25,"title":"4","completed":0}]
+2025-04-03 15:31:58 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:31:58 - DELETE: {"id":25}
+2025-04-03 15:31:58 - SQL: "SELECT * FROM todo"
+2025-04-03 15:31:58 - GET: [{"id":6,"title":"aufgabe AKTUALIS","completed":0},{"id":21,"title":"MEGA TASK","completed":0}]
+2025-04-03 15:32:01 - DEBUG PUT payload: {"id":21,"completed":true}
+2025-04-03 15:32:03 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:32:03 - DELETE: {"id":6}
+2025-04-03 15:32:03 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:03 - GET: [{"id":21,"title":"MEGA TASK","completed":0}]
+2025-04-03 15:32:12 - DEBUG PUT payload: {"id":"21","title":"MEGA TASK456","completed":0}
+2025-04-03 15:32:12 - SQL: "UPDATE todo SET title = :title, completed = :completed WHERE id = :id"
+2025-04-03 15:32:12 - PUT: {"id":"21","title":"MEGA TASK456","completed":0}
+2025-04-03 15:32:12 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:12 - GET: [{"id":21,"title":"MEGA TASK456","completed":0}]
+2025-04-03 15:32:13 - DEBUG PUT payload: {"id":21,"completed":true}
+2025-04-03 15:32:17 - DEBUG PUT payload: {"id":"21","title":"MEGA TASK456789","completed":1}
+2025-04-03 15:32:17 - SQL: "UPDATE todo SET title = :title, completed = :completed WHERE id = :id"
+2025-04-03 15:32:17 - PUT: {"id":"21","title":"MEGA TASK456789","completed":1}
+2025-04-03 15:32:17 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:17 - GET: [{"id":21,"title":"MEGA TASK456789","completed":1}]
+2025-04-03 15:32:23 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:32:23 - DELETE: {"id":21}
+2025-04-03 15:32:23 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:23 - GET: []
+2025-04-03 15:32:27 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:32:27 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:32:27 - POST: {"id":29,"title":"1","completed":0}
+2025-04-03 15:32:27 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:27 - GET: [{"id":29,"title":"1","completed":0}]
+2025-04-03 15:32:28 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:32:28 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:32:28 - POST: {"id":30,"title":"2","completed":0}
+2025-04-03 15:32:28 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:28 - GET: [{"id":29,"title":"1","completed":0},{"id":30,"title":"2","completed":0}]
+2025-04-03 15:32:29 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:32:29 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:32:29 - POST: {"id":31,"title":"3","completed":0}
+2025-04-03 15:32:29 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:29 - GET: [{"id":29,"title":"1","completed":0},{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0}]
+2025-04-03 15:32:31 - DEBUG PUT payload: {"id":31,"completed":true}
+2025-04-03 15:32:32 - DEBUG PUT payload: {"id":30,"completed":true}
+2025-04-03 15:32:33 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:32:33 - DELETE: {"id":29}
+2025-04-03 15:32:33 - SQL: "SELECT * FROM todo"
+2025-04-03 15:32:33 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0}]
+2025-04-03 15:36:46 - SQL: "SELECT * FROM todo"
+2025-04-03 15:36:46 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0}]
+2025-04-03 15:36:53 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:36:53 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:36:53 - POST: {"id":32,"title":"d","completed":0}
+2025-04-03 15:36:53 - SQL: "SELECT * FROM todo"
+2025-04-03 15:36:53 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0},{"id":32,"title":"d","completed":0}]
+2025-04-03 15:36:53 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:36:53 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:36:53 - POST: {"id":33,"title":"v","completed":0}
+2025-04-03 15:36:53 - SQL: "SELECT * FROM todo"
+2025-04-03 15:36:53 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0}]
+2025-04-03 15:36:54 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:36:54 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:36:54 - POST: {"id":34,"title":"g","completed":0}
+2025-04-03 15:36:54 - SQL: "SELECT * FROM todo"
+2025-04-03 15:36:54 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0},{"id":34,"title":"g","completed":0}]
+2025-04-03 15:36:54 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:36:54 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:36:54 - POST: {"id":35,"title":"d","completed":0}
+2025-04-03 15:36:54 - SQL: "SELECT * FROM todo"
+2025-04-03 15:36:54 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0},{"id":34,"title":"g","completed":0},{"id":35,"title":"d","completed":0}]
+2025-04-03 15:36:54 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 15:36:54 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 15:36:54 - POST: {"id":36,"title":"d","completed":0}
+2025-04-03 15:36:54 - SQL: "SELECT * FROM todo"
+2025-04-03 15:36:54 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0},{"id":34,"title":"g","completed":0},{"id":35,"title":"d","completed":0},{"id":36,"title":"d","completed":0}]
+2025-04-03 15:36:56 - DEBUG PUT payload: {"id":36,"completed":true}
+2025-04-03 15:36:56 - DEBUG PUT payload: {"id":35,"completed":true}
+2025-04-03 15:36:57 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:36:57 - DELETE: {"id":34}
+2025-04-03 15:36:57 - SQL: "SELECT * FROM todo"
+2025-04-03 15:36:57 - GET: [{"id":30,"title":"2","completed":0},{"id":31,"title":"3","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0},{"id":35,"title":"d","completed":0},{"id":36,"title":"d","completed":0}]
+2025-04-03 15:36:58 - DEBUG PUT payload: {"id":36,"completed":true}
+2025-04-03 15:36:58 - DEBUG PUT payload: {"id":35,"completed":true}
+2025-04-03 15:36:58 - DEBUG PUT payload: {"id":33,"completed":true}
+2025-04-03 15:36:59 - DEBUG PUT payload: {"id":32,"completed":true}
+2025-04-03 15:37:02 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:37:02 - DELETE: {"id":31}
+2025-04-03 15:37:02 - SQL: "SELECT * FROM todo"
+2025-04-03 15:37:02 - GET: [{"id":30,"title":"2","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0},{"id":35,"title":"d","completed":0},{"id":36,"title":"d","completed":0}]
+2025-04-03 15:46:00 - SQL: "SELECT * FROM todo"
+2025-04-03 15:46:00 - GET: [{"id":30,"title":"2","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0},{"id":35,"title":"d","completed":0},{"id":36,"title":"d","completed":0}]
+2025-04-03 15:46:04 - DEBUG PUT payload: {"id":36,"completed":true}
+2025-04-03 15:46:04 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:04 - PUT: {"id":36,"completed":true}
+2025-04-03 15:46:08 - DEBUG PUT payload: {"id":36,"completed":false}
+2025-04-03 15:46:08 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:08 - PUT: {"id":36,"completed":false}
+2025-04-03 15:46:09 - DEBUG PUT payload: {"id":36,"completed":true}
+2025-04-03 15:46:09 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:09 - PUT: {"id":36,"completed":true}
+2025-04-03 15:46:10 - DEBUG PUT payload: {"id":36,"completed":false}
+2025-04-03 15:46:10 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:10 - PUT: {"id":36,"completed":false}
+2025-04-03 15:46:11 - DEBUG PUT payload: {"id":35,"completed":true}
+2025-04-03 15:46:11 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:11 - PUT: {"id":35,"completed":true}
+2025-04-03 15:46:12 - DEBUG PUT payload: {"id":35,"completed":false}
+2025-04-03 15:46:12 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:12 - PUT: {"id":35,"completed":false}
+2025-04-03 15:46:13 - DEBUG PUT payload: {"id":33,"completed":true}
+2025-04-03 15:46:13 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:13 - PUT: {"id":33,"completed":true}
+2025-04-03 15:46:13 - DEBUG PUT payload: {"id":33,"completed":false}
+2025-04-03 15:46:13 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:13 - PUT: {"id":33,"completed":false}
+2025-04-03 15:46:15 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:46:15 - DELETE: {"id":36}
+2025-04-03 15:46:15 - SQL: "SELECT * FROM todo"
+2025-04-03 15:46:15 - GET: [{"id":30,"title":"2","completed":0},{"id":32,"title":"d","completed":0},{"id":33,"title":"v","completed":0},{"id":35,"title":"d","completed":0}]
+2025-04-03 15:46:16 - DEBUG PUT payload: {"id":35,"completed":true}
+2025-04-03 15:46:16 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 15:46:16 - PUT: {"id":35,"completed":true}
+2025-04-03 15:46:16 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:46:16 - DELETE: {"id":33}
+2025-04-03 15:46:16 - SQL: "SELECT * FROM todo"
+2025-04-03 15:46:16 - GET: [{"id":30,"title":"2","completed":0},{"id":32,"title":"d","completed":0},{"id":35,"title":"d","completed":1}]
+2025-04-03 15:46:19 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 15:46:19 - DELETE: {"id":32}
+2025-04-03 15:46:19 - SQL: "SELECT * FROM todo"
+2025-04-03 15:46:19 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1}]
+2025-04-03 16:02:43 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 16:02:43 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 16:02:43 - POST: {"id":37,"title":"5","completed":0}
+2025-04-03 16:02:43 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:43 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0}]
+2025-04-03 16:02:44 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 16:02:44 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 16:02:44 - POST: {"id":38,"title":"5","completed":0}
+2025-04-03 16:02:44 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:44 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0},{"id":38,"title":"5","completed":0}]
+2025-04-03 16:02:44 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 16:02:44 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 16:02:44 - POST: {"id":39,"title":"5","completed":0}
+2025-04-03 16:02:44 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:44 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0},{"id":38,"title":"5","completed":0},{"id":39,"title":"5","completed":0}]
+2025-04-03 16:02:45 - SQL: "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+2025-04-03 16:02:45 - SQL: "SELECT * FROM todo WHERE id = :id"
+2025-04-03 16:02:45 - POST: {"id":40,"title":"5","completed":0}
+2025-04-03 16:02:45 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:45 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0},{"id":38,"title":"5","completed":0},{"id":39,"title":"5","completed":0},{"id":40,"title":"5","completed":0}]
+2025-04-03 16:02:46 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 16:02:46 - PUT: {"id":40,"completed":true}
+2025-04-03 16:02:47 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 16:02:47 - DELETE: {"id":39}
+2025-04-03 16:02:47 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:47 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0},{"id":38,"title":"5","completed":0},{"id":40,"title":"5","completed":1}]
+2025-04-03 16:02:48 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 16:02:48 - PUT: {"id":40,"completed":false}
+2025-04-03 16:02:52 - SQL: "UPDATE todo SET title = :title, completed = :completed WHERE id = :id"
+2025-04-03 16:02:52 - PUT: {"id":"40","title":"55","completed":0}
+2025-04-03 16:02:52 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:52 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0},{"id":38,"title":"5","completed":0},{"id":40,"title":"55","completed":0}]
+2025-04-03 16:02:53 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 16:02:53 - DELETE: {"id":40}
+2025-04-03 16:02:53 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:53 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0},{"id":38,"title":"5","completed":0}]
+2025-04-03 16:02:55 - SQL: "UPDATE todo SET completed = :completed WHERE id = :id"
+2025-04-03 16:02:55 - PUT: {"id":38,"completed":true}
+2025-04-03 16:02:58 - SQL: "UPDATE todo SET title = :title, completed = :completed WHERE id = :id"
+2025-04-03 16:02:58 - PUT: {"id":"38","title":"55","completed":1}
+2025-04-03 16:02:58 - SQL: "SELECT * FROM todo"
+2025-04-03 16:02:58 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0},{"id":38,"title":"55","completed":1}]
+2025-04-03 16:03:00 - SQL: "DELETE FROM todo WHERE id = :id"
+2025-04-03 16:03:00 - DELETE: {"id":38}
+2025-04-03 16:03:00 - SQL: "SELECT * FROM todo"
+2025-04-03 16:03:00 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0}]
