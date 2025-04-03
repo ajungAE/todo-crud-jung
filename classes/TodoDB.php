@@ -80,13 +80,11 @@ class TodoDB
         $statement->execute(["id" => $id, "completed" => $completed]);
     }
 
-    public function updateTodo($id, $title, $completed)
-    {
-        $stmt = $this->connection->prepare(
-            "UPDATE todo SET title = ?, completed = ? WHERE id = ?"
+    public function updateTodo($id, $title, $completed) {
+        $this->prepareExecuteStatement(
+            "UPDATE todo SET title = :title, completed = :completed WHERE id = :id",
+            ['title' => $title, 'completed' => $completed, 'id' => $id]
         );
-        $stmt->execute([$title, $completed, $id]);
-
         return ["status" => "success"];
     }
 
