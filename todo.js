@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return completeButton;
     };
 
-    // (NEW) create update button <------------
+    //create update button 
     const getUpdateButton = (item) => {
 
         const updateButton = document.createElement('button');
@@ -89,40 +89,44 @@ document.addEventListener('DOMContentLoaded', function () {
         updateButton.addEventListener('click', function () {
             document.getElementById('todo-id').value = item.id;
             document.getElementById('todo-update-input').value = item.title;
+            document.getElementById('todo-completed').value = item.completed ? 1 : 0; // aktueller Status
             document.getElementById('todo-update-form').style.display = 'block';
         });
 
         return updateButton;
     }
 
-    // Create a delete button for each todo item
+    // Fetch all tasks from the todo-API
     const fetchTodos = () => {
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
                 const todoList = document.getElementById('todo-list');
                 todoList.innerHTML = "";
+    
                 data.forEach(Item => {
                     const item = {
                         ...Item,
-                        completed: Item.completed === 1 || Item.completed === true
+                        completed: String(Item.completed) === "1" 
                     };
-
+    
                     const li = document.createElement('li');
                     li.textContent = item.title;
-
+    
                     if (item.completed) {
-                        li.style.textDecoration = 'line-through'; // durchgestrichen
-                        li.style.opacity = '0.6'; // ausgegraut
+                        li.style.textDecoration = 'line-through';
+                        li.style.opacity = '0.6';
                     }
-
+    
                     li.appendChild(getDeleteButton(item));
                     li.appendChild(getCompleteButton(item));
-                    li.appendChild(getUpdateButton(item)); // (NEW) <-------- UPDATE BUTTON
+                    li.appendChild(getUpdateButton(item));
+    
                     todoList.appendChild(li);
-                }); // ← das war die fehlende Klammer hier
+                });
             });
     };
+    
 
 
     // Handle form submit todo form
@@ -153,6 +157,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const id = document.getElementById('todo-id').value;
         const todoInput = document.getElementById('todo-update-input').value;
+        const completed = Number(document.getElementById('todo-completed').value);
+
+        // Check: darf nicht leer sein!
+        if (!todoInput.trim()) {
+            alert("Titel darf nicht leer sein!");
+            return;
+        }
 
         fetch(apiUrl, {
             method: 'PUT',
@@ -162,15 +173,16 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify({
                 id: id,
                 title: todoInput,
-                completed: false 
+                completed: completed
             })
         })
             .then(response => response.json())
             .then(() => {
                 document.getElementById('todo-update-form').style.display = 'none';
-                fetchTodos(); // Liste neu laden
+                fetchTodos();
             });
     });
+
 
 
     // Load todos
