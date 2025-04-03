@@ -10,44 +10,23 @@ header('Content-Type: application/json');  //application/json für JSON files
 
 require_once('./logging.php'); // Logging-Funktion einbinden
 require_once('./classes/TodoDB.php'); // TodoDB-Klasse einbinden
-require_once('./config.php'); // Konfiguration einbinden
 
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-];
-
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-    //var_dump($pdo);
-} catch (\PDOException $e) {
-    error_log("PDOException: " . $e->getMessage() . " in "
-        . $e->getFile() . " on line " . $e->getLine());
-}
-
+$todoDB = new TodoDB();
 
 // Log the request method and the TODO items
 switch ($_SERVER['REQUEST_METHOD']) {
-    case 'GET': 
+    case 'GET':
         $todo_items = $todoDB->getTodos(); // Hole alle Todos aus der DB (NEU)
         echo json_encode($todo_items);
         write_log("GET", $todo_items);
         break;
     case 'POST':
         $data = json_decode(file_get_contents('php://input'), true);
-        $statement = $pdo->prepare( // Insert into database
-            "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
-        );
-        $statement->execute(['title' => $data['title'], 'completed' => 0]);
-        $id = $pdo->lastInsertId(); // Hole die letzte ID
-        $stmt = $pdo->prepare("SELECT * FROM todo WHERE id = ?"); // Lade das neue Todo aus der DB
-        $stmt->execute([$id]);
-        $newTodo = $stmt->fetch();
-        echo json_encode($newTodo); // Rückgabe: vollständiges neues Todo
+        $newTodo = $todoDB->addTodo($data['title']);
+        echo json_encode($newTodo);
         write_log("POST", $newTodo);
         break;
+
     case 'PUT':
         $data = json_decode(file_get_contents('php://input'), true);
         $id = $data['id'];
@@ -55,8 +34,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $completed = isset($data['completed']) && $data['completed'] ? 1 : 0;
 
         if (isset($id) && isset($title)) {
-            $stmt = $pdo->prepare("UPDATE todo SET title = ?, completed = ? WHERE id = ?");
-            $stmt->execute([$title, $completed, $id]);
+            $result = $todoDB->updateTodo($id, $title, $completed); // <-- neuer Aufruf 
             echo json_encode(["status" => "success"]);
             write_log("PUT", $data);
         } else {
@@ -70,14 +48,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $id = $data['id'];
 
         if ($id) {
-            $stmt = $pdo->prepare("DELETE FROM todo WHERE id = ?");
-            $stmt->execute([$id]);
-            echo json_encode(["status" => "success"]);
+            $result = $todoDB->deleteTodo($id); // Nutze Methode aus der Klasse
+            echo json_encode($result);
             write_log("DELETE", $data);
         } else {
             http_response_code(400);
             echo json_encode(["error" => "ID fehlt"]);
         }
-
         break;
 }
