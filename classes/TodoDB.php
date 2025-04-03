@@ -88,11 +88,8 @@ class TodoDB
         return ["status" => "success"];
     }
 
-    public function deleteTodo($id)
-    {
-        $stmt = $this->connection->prepare("DELETE FROM todo WHERE id = ?");
-        $stmt->execute([$id]);
-
+    public function deleteTodo($id) {
+        $this->prepareExecuteStatement("DELETE FROM todo WHERE id = :id", ['id' => $id]);
         return ["status" => "success"];
     }
 }
