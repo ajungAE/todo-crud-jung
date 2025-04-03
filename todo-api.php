@@ -6,14 +6,12 @@
 //  Führt passende SQL-Befehle aus (je nach HTTP-Methode)
 //  Gibt als Antwort JSON-Daten zurück, die dein Frontend anzeigen kann
 
-
 header('Content-Type: application/json');  //application/json für JSON files
 
-$host = 'localhost';
-$db = 'test_db';
-$user = 'alexjung';
-$pass = 'links234';
-$charset = 'utf8mb4';
+require_once('./logging.php'); // Logging-Funktion einbinden
+require_once('./classes/TodoDB.php'); // TodoDB-Klasse einbinden
+require_once('./config.php'); // Konfiguration einbinden
+
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
@@ -29,14 +27,6 @@ try {
         . $e->getFile() . " on line " . $e->getLine());
 }
 
-// LOG function in PHP
-function write_log($action, $data)
-{
-    $log = fopen('log.txt', 'a');
-    $timestamp = date('Y-m-d H:i:s');
-    fwrite($log, "$timestamp - $action: " . json_encode($data) . "\n");
-    fclose($log);
-}
 
 // Log the request method and the TODO items
 switch ($_SERVER['REQUEST_METHOD']) {
