@@ -30,9 +30,8 @@ try {
 
 // Log the request method and the TODO items
 switch ($_SERVER['REQUEST_METHOD']) {
-    case 'GET':
-        $statement = $pdo->query("SELECT * FROM todo"); // (NEW) 
-        $todo_items = $statement->fetchAll(); // (NEW) 
+    case 'GET': 
+        $todo_items = $todoDB->getTodos(); // Hole alle Todos aus der DB (NEU)
         echo json_encode($todo_items);
         write_log("GET", $todo_items);
         break;

@@ -29,4 +29,11 @@ class TodoDB {
             error_log($e->getMessage());
         }
     }
+
+    public function getTodos() {
+        $statement = $this->connection->query("SELECT * FROM todo");
+        $todo_items = $statement->fetchAll();
+        return $todo_items;
+    }
 }
+
