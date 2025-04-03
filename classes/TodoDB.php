@@ -60,17 +60,14 @@ class TodoDB
         return $stmt->fetchAll();
     }
 
-    public function addTodo($title)
-    {
-        $stmt = $this->connection->prepare(
-            "INSERT INTO todo (title, completed) VALUES (:title, :completed)"
+    public function addTodo($title) {
+        $this->prepareExecuteStatement(
+            "INSERT INTO todo (title, completed) VALUES (:title, :completed)",
+            ['title' => $title, 'completed' => 0]
         );
-        $stmt->execute(['title' => $title, 'completed' => 0]);
-
+    
         $id = $this->connection->lastInsertId();
-        $stmt = $this->connection->prepare("SELECT * FROM todo WHERE id = ?");
-        $stmt->execute([$id]);
-
+        $stmt = $this->prepareExecuteStatement("SELECT * FROM todo WHERE id = :id", ['id' => $id]);
         return $stmt->fetch();
     }
 
