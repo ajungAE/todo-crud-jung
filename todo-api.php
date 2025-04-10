@@ -1,69 +1,127 @@
-
 <?php
-// BACKEND / API 
-//  Empfängt die Requests vom Frontend
-//  Verbindet sich mit der Datenbank über PDO
-//  Führt passende SQL-Befehle aus (je nach HTTP-Methode)
-//  Gibt als Antwort JSON-Daten zurück, die dein Frontend anzeigen kann
+// Entwicklungsmodus: Fehler anzeigen (im Livebetrieb deaktivieren!)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-header('Content-Type: application/json');  //application/json für JSON files
+// Header für JSON setzen
+header('Content-Type: application/json');
 
-require_once('./logging.php'); // Logging-Funktion einbinden
-require_once('./classes/TodoDB.php'); // TodoDB-Klasse einbinden
+// Globale Fehlerbehandlung → gibt JSON zurück statt leere Seite
+set_exception_handler(function ($e) {
+    http_response_code(500);
+    echo json_encode([
+        "status" => "error",
+        "message" => $e->getMessage()
+    ]);
+    exit;
+});
+
+// Externe Dateien laden
+require_once('./logging.php');
+require_once('./classes/TodoDB.php');
 
 $todoDB = new TodoDB();
 
-// Log the request method and the TODO items
+// HTTP-Methoden behandeln
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        $todo_items = $todoDB->getTodos(); // Hole alle Todos aus der DB (NEU)
-        echo json_encode($todo_items);
-        write_log("GET", $todo_items);
+        $todos = $todoDB->getTodos();
+        echo json_encode($todos);
+        write_log("GET", $todos);
         break;
+
     case 'POST':
         $data = json_decode(file_get_contents('php://input'), true);
+
+        if (!isset($data['title']) || trim($data['title']) === '') {
+            http_response_code(400);
+            echo json_encode([
+                "status" => "error",
+                "message" => "Titel darf nicht leer sein."
+            ]);
+            exit;
+        }
+
         $newTodo = $todoDB->addTodo($data['title']);
-        echo json_encode($newTodo);
+        echo json_encode([
+            "status" => "success",
+            "data" => $newTodo
+        ]);
         write_log("POST", $newTodo);
         break;
 
     case 'PUT':
         $data = json_decode(file_get_contents('php://input'), true);
         $id = $data['id'] ?? null;
-        $completed = (int) ($data['completed'] ?? 0);
 
-        if ($id !== null) {
-            if (isset($data['title'])) {
-                // Titel + Status aktualisieren
-                $title = $data['title'];
-                $result = $todoDB->updateTodo($id, $title, $completed);
-            } else {
-                // Nur Status aktualisieren
-                $todoDB->setCompleted($id, $completed);
-                $result = ["status" => "success"];
+        if (!$id) {
+            http_response_code(400);
+            echo json_encode([
+                "status" => "error",
+                "message" => "ID fehlt"
+            ]);
+            exit;
+        }
+
+        // Nur "completed" toggeln
+        if (isset($data['completed']) && !isset($data['title'])) {
+            $todoDB->setCompleted($id, (int)$data['completed']);
+            echo json_encode(["status" => "success"]);
+            write_log("PUT", $data);
+            break;
+        }
+
+        // Titel (und optional completed) aktualisieren
+        if (isset($data['title'])) {
+            $title = trim($data['title']);
+            $completed = (int)($data['completed'] ?? 0);
+
+            if ($title === '') {
+                http_response_code(400);
+                echo json_encode([
+                    "status" => "error",
+                    "message" => "Titel darf nicht leer sein."
+                ]);
+                exit;
             }
 
-            echo json_encode($result);
+            $result = $todoDB->updateTodo($id, $title, $completed);
+            echo json_encode(["status" => "success", "data" => $result]);
             write_log("PUT", $data);
-        } else {
-            http_response_code(400);
-            echo json_encode(["error" => "ID fehlt"]);
+            break;
         }
+
+        http_response_code(400);
+        echo json_encode([
+            "status" => "error",
+            "message" => "Ungültige Daten für PUT-Request"
+        ]);
         break;
-
-
 
     case 'DELETE':
         $data = json_decode(file_get_contents('php://input'), true);
-        $id = $data['id'];
+        $id = $data['id'] ?? null;
 
-        if ($id) {
-            $result = $todoDB->deleteTodo($id); // Nutze Methode aus der Klasse
-            echo json_encode($result);
-            write_log("DELETE", $data);
-        } else {
+        if (!$id) {
             http_response_code(400);
-            echo json_encode(["error" => "ID fehlt"]);
+            echo json_encode([
+                "status" => "error",
+                "message" => "ID fehlt"
+            ]);
+            exit;
         }
+
+        $result = $todoDB->deleteTodo($id);
+        echo json_encode(["status" => "success", "data" => $result]);
+        write_log("DELETE", $data);
+        break;
+
+    default:
+        http_response_code(405);
+        echo json_encode([
+            "status" => "error",
+            "message" => "HTTP-Methode nicht erlaubt"
+        ]);
         break;
 }

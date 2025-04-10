@@ -2,35 +2,33 @@
 
 /**
  * Todo list database object.
- *
- * Global variable with the object of our TodoDB class.
  */
 require_once('./logging.php');
 require_once('./config.php');
-
 
 class TodoDB
 {
     private $connection;
 
     /**
-     * Contructructor of the TodoDB class.
+     * Constructor of the TodoDB class.
      */
     public function __construct()
     {
         global $host, $db, $user, $pass;
+
         try {
             $this->connection = new PDO(
-                "mysql:host=$host;dbname=$db;",
+                "mysql:host=$host;dbname=$db;charset=utf8mb4",
                 $user,
-                $pass
+                $pass,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Aktiviere Exceptions!
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                ]
             );
-            $this->connection->setAttribute(
-                PDO::ATTR_DEFAULT_FETCH_MODE,
-                PDO::FETCH_ASSOC
-            );
-        } catch (Exception $e) {
-            error_log($e->getMessage());
+        } catch (PDOException $e) {
+            throw new Exception("Verbindung zur Datenbank fehlgeschlagen: " . $e->getMessage());
         }
     }
 
@@ -39,7 +37,8 @@ class TodoDB
      *
      * @param string $sql The SQL statement.
      * @param array $params Parameters for the SQL statement.
-     * @return PDOStatement The executed statement.
+     * @return PDOStatement
+     * @throws Exception
      */
     private function prepareExecuteStatement($sql, $params = [])
     {
@@ -48,46 +47,57 @@ class TodoDB
             $stmt = $this->connection->prepare($sql);
             $stmt->execute($params);
             return $stmt;
-        } catch (Exception $e) {
-            error_log($e->getMessage());
+        } catch (PDOException $e) {
+            throw new Exception("SQL-Fehler: " . $e->getMessage());
         }
     }
 
     public function getTodos()
     {
-        $stmt = $this->prepareExecuteStatement("SELECT * FROM todo");
+        $stmt = $this->prepareExecuteStatement("SELECT * FROM todo ORDER BY id DESC");
         return $stmt->fetchAll();
     }
 
-    public function addTodo($title) {
+    public function addTodo($title)
+    {
         $this->prepareExecuteStatement(
             "INSERT INTO todo (title, completed) VALUES (:title, :completed)",
             ['title' => $title, 'completed' => 0]
         );
-    
+
         $id = $this->connection->lastInsertId();
-        $stmt = $this->prepareExecuteStatement("SELECT * FROM todo WHERE id = :id", ['id' => $id]);
+
+        $stmt = $this->prepareExecuteStatement(
+            "SELECT * FROM todo WHERE id = :id",
+            ['id' => $id]
+        );
+
         return $stmt->fetch();
     }
 
-
-    public function setCompleted($id, $completed) {
+    public function setCompleted($id, $completed)
+    {
         $this->prepareExecuteStatement(
             "UPDATE todo SET completed = :completed WHERE id = :id",
             ['id' => $id, 'completed' => $completed]
         );
+        return true;
     }
 
-    public function updateTodo($id, $title, $completed) {
+    public function updateTodo($id, $title, $completed)
+    {
         $this->prepareExecuteStatement(
             "UPDATE todo SET title = :title, completed = :completed WHERE id = :id",
             ['title' => $title, 'completed' => $completed, 'id' => $id]
         );
-        return ["status" => "success"];
+
+        $stmt = $this->prepareExecuteStatement("SELECT * FROM todo WHERE id = :id", ['id' => $id]);
+        return $stmt->fetch();
     }
 
-    public function deleteTodo($id) {
+    public function deleteTodo($id)
+    {
         $this->prepareExecuteStatement("DELETE FROM todo WHERE id = :id", ['id' => $id]);
-        return ["status" => "success"];
+        return true;
     }
 }

@@ -29,8 +29,7 @@ try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     var_dump($pdo);
 } catch (\PDOException $e) {
-    error_log("PDOException: " . $e->getMessage() . " in "
-              . $e->getFile() . " on line " . $e->getLine());
+    die("Fehler bei DB-Verbindung: " . $e->getMessage());
 }
 
 $statement = $pdo->query("SELECT * FROM todo");

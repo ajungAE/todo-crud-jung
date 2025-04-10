@@ -482,3 +482,7 @@
 2025-04-03 16:03:00 - DELETE: {"id":38}
 2025-04-03 16:03:00 - SQL: "SELECT * FROM todo"
 2025-04-03 16:03:00 - GET: [{"id":30,"title":"2","completed":0},{"id":35,"title":"d","completed":1},{"id":37,"title":"5","completed":0}]
+2025-04-10 07:27:06 - SQL: "SELECT * FROM todo ORDER BY id DESC"
+2025-04-10 07:27:06 - GET: [{"id":37,"title":"5","completed":0},{"id":35,"title":"d","completed":1},{"id":30,"title":"2","completed":0}]
+2025-04-10 07:27:13 - SQL: "SELECT * FROM todo ORDER BY id DESC"
+2025-04-10 07:27:13 - GET: [{"id":37,"title":"5","completed":0},{"id":35,"title":"d","completed":1},{"id":30,"title":"2","completed":0}]
